@@ -37,7 +37,7 @@ class myDBSync
 
     private function mySQLSync()
     {
-        
+        // hole mir 
         
     }
 

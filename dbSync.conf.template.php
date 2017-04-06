@@ -9,7 +9,7 @@ $mySQL['GLOBAL']['SYNC_ALL'] = 0;
 $mySQL['GLOBAL']['SYNC_DIRECTION'] = 1; # 1 => ONE2TWO | 2 TWO2ONE
 $mySQL['GLOBAL']['MAX_NUMROWS'] = 20;
 $mySQL['GLOBAL']['SYNC_ID'] = 'row_id';
-
+$mySQL['GLOBAL']['LOG']['FILE'] = '';
 
 
 /* 
