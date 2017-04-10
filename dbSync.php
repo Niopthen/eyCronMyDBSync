@@ -6,7 +6,7 @@
 
 if (!file_exists('dbSync.conf.php'))
 {
-    echo 'the Sync file is missing /n';
+    echo 'the Sync Config File is missing /n';
 }
 else
 {
@@ -22,6 +22,8 @@ class myDBSync
     private $mySQLConOne;
     private $mySQLConTwo;
     private $mySQLArray;
+    private $tmp_count;
+    private $tmp_allrows;
 
     function __construct($mySQL)
     {
@@ -29,23 +31,27 @@ class myDBSync
         /* make the connection to DB One and DB Two */
         $this->mySQLConOne = $this->mysqliConnect($this->mySQLArray['ONE']);
         $this->mySQLConTwo = $this->mysqliConnect($this->mySQLArray['TWO']);
-        
+
         // make sync
         $this->mySQLSync();
-          
     }
+
 
     private function mySQLSync()
     {
-        // hole mir 
         
+        
+        // zaehle mir die anzahl der reihen der ersten DB und hole mir die erste anzahl lt. config
+        // 
+        // hole mir SELECT * FROM tbl LIMIT 5,10;  # Retrieve rows 6-15
     }
 
-/**
- * Connection to the databases from the config file
- * @param array $mySQLCon
- * @return string
- */
+
+    /**
+     * Connection to the databases from the config file
+     * @param array $mySQLCon
+     * @return string
+     */
     private function mysqliConnect($mySQLCon)
     {
         $dbh = mysqli_init();
@@ -59,19 +65,31 @@ class myDBSync
         return $dbh;
     }
 
+
     private function mySQL_Select()
     {
         
+        
+        
     }
+
 
     private function mySQL_Insert()
     {
         
     }
 
+
+    private function mySQL_Delete()
+    {
+        
+    }
+
+
     function __destruct()
     {
         
     }
+
 
 }
