@@ -52,6 +52,7 @@ class DBSync
     private $SQLConTwo;
     private $DBSyncConf;
     private $SyncTyp;
+    private $WirteLog;
     private $tmp_rows_db_one;
     private $tmp_rows_db_two;
 
@@ -59,6 +60,7 @@ class DBSync
     {
         $this->SyncTyp = $SyncTyp;
         $this->DBSyncConf = $DBSyncConf;
+        $this->WirteLog = $WriteLog;
 
         // connect to DB One and DB Two
         $this->SQLConOne = $this->Connect($this->DBSyncConf['ONE']);
